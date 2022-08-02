@@ -9,11 +9,13 @@ import SectionForm from '../../src/cafe/lnading/SectionForm';
 import KakaoShare from '../../src/cafe/lnading/KakaoShare';
 import SectionContent from '../../src/cafe/lnading/SectionContent';
 import KakaoChat from '../../src/cafe/lnading/KakaoChat';
+import { GetStaticProps } from 'next';
 
 const metaData = {
   title: '깊이를 마시다 | 스마트 메뉴판',
   description: '우리 카페만의 특별한 모바일 메뉴판을 도입해보세요.',
-  image: '/images/logo_name.png',
+  image: '/images/logo_icon.png',
+  canonical: 'cafe/landing',
 };
 
 function LandingPage() {
@@ -64,3 +66,9 @@ function LandingPage() {
   );
 }
 export default LandingPage;
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+  };
+};

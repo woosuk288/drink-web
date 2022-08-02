@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Layout from '../src/Layout';
 import SectionA from '../src/intro/SectionA';
 import Meta from '../src/Meta';
@@ -7,13 +7,13 @@ import SectionB from '../src/intro/SectionB';
 import SectionC from '../src/intro/SectionC';
 import { Box } from '@mui/material';
 
-const Home: NextPage = () => {
-  const metaData = {
-    title: '깊이를 마시다',
-    description: '마시는 경험이 바뀌면 인생의 깊이가 달라집니다.',
-    image: '/images/logo_name.png',
-  };
+const metaData = {
+  title: '깊이를 마시다',
+  description: '마시는 경험이 바뀌면 인생의 깊이가 달라집니다.',
+  image: '/images/logo_name.png',
+};
 
+const Home: NextPage = () => {
   return (
     <Layout>
       <Meta data={metaData} />
@@ -44,3 +44,9 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+  };
+};

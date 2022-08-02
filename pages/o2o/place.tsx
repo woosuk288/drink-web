@@ -9,7 +9,7 @@ import {
 
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import CoffeeResultList from '../../src/o2o/place/CoffeeResultList';
@@ -96,7 +96,8 @@ export type CoffeeResultType = {
 const metaData = {
   title: '깊이를 마시다 | 인생 커피 지도',
   description: '유명 국내 로스터리들의 커피 데이터를 분석했습니다.',
-  image: '/images/logo_name.png',
+  image: '/images/o2o/o2o_coffee_map.png',
+  canonical: 'o2o/place',
 };
 
 const PlacePage: NextPage = () => {
@@ -577,3 +578,9 @@ function getKakaoMap(id: string, y: string, x: string, level: number = 11) {
 
   return map;
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+  };
+};
