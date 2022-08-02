@@ -88,7 +88,6 @@ const TestHeader = () => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}
-              onClick={() => router.push('/')}
             >
               <IconButton
                 size="large"
