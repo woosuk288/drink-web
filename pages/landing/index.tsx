@@ -24,7 +24,7 @@ import Image from 'next/image';
 import Register from '../../src/landing/register';
 import * as fbq from '../../facebook/fpixel';
 import { KakaoShareButton } from '../../src/landing/KakaoShareButton';
-import TestHeader from '../../src/landing/TestHeader';
+import LandingHeader from '../../src/landing/LandingHeader';
 
 const metaData = {
   title: '깊이를 마시다',
@@ -56,7 +56,7 @@ const Landing: NextPage = () => {
   };
 
   return (
-    <Layout header={<TestHeader />}>
+    <Layout header={<LandingHeader />}>
       <Meta data={metaData} />
 
       <Box display="flex" flexDirection={'column'} paddingX="1rem">
