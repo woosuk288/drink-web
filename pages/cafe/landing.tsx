@@ -11,8 +11,8 @@ import SectionContent from '../../src/cafe/lnading/SectionContent';
 import KakaoChat from '../../src/cafe/lnading/KakaoChat';
 
 const metaData = {
-  title: '깊이를 마시다',
-  description: '마시는 경험이 바뀌면 인생의 깊이가 달라집니다.',
+  title: '깊이를 마시다 | 스마트 메뉴판',
+  description: '우리 카페만의 특별한 모바일 메뉴판을 도입해보세요.',
   image: '/images/logo_name.png',
 };
 
@@ -57,7 +57,7 @@ function LandingPage() {
         {/* kakao */}
         <KakaoShare />
 
-        {/* 채널톡 넣기 */}
+        {/* TODO: 채널톡 넣기 */}
         <KakaoChat />
       </Box>
     </Layout>

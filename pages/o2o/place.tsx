@@ -24,6 +24,7 @@ import { logEvent } from 'firebase/analytics';
 import useScript from '../../src/hooks/useScript';
 import { labelFromOneToFive } from '../../src/utils/combos';
 import { getAddressXY } from '../../src/utils/kakaoAPI';
+import Meta from '../../src/Meta';
 
 export type CoffeeType = {
   id: string;
@@ -89,6 +90,12 @@ export type CoffeeResultType = {
   seller: SellerType;
   beans: BeanType[];
   branch: BranchType;
+};
+
+const metaData = {
+  title: '깊이를 마시다 | 인생 커피 지도',
+  description: '유명 국내 로스터리들의 커피 데이터를 분석했습니다.',
+  image: '/images/logo_name.png',
 };
 
 const PlacePage: NextPage = () => {
@@ -415,6 +422,7 @@ const PlacePage: NextPage = () => {
   return (
     <Container maxWidth="sm" disableGutters>
       {/* <Button onClick={jsonFileTest}>jsontest</Button> */}
+      <Meta data={metaData} />
       <a
         href="https://pf.kakao.com/_ktxnJb/chat"
         target="_blank"
