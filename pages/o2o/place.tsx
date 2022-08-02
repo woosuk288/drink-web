@@ -25,6 +25,7 @@ import useScript from '../../src/hooks/useScript';
 import { labelFromOneToFive } from '../../src/utils/combos';
 import { getAddressXY } from '../../src/utils/kakaoAPI';
 import Meta from '../../src/Meta';
+import KakaoChat from '../../src/cafe/lnading/KakaoChat';
 
 export type CoffeeType = {
   id: string;
@@ -423,27 +424,8 @@ const PlacePage: NextPage = () => {
     <Container maxWidth="sm" disableGutters>
       {/* <Button onClick={jsonFileTest}>jsontest</Button> */}
       <Meta data={metaData} />
-      <a
-        href="https://pf.kakao.com/_ktxnJb/chat"
-        target="_blank"
-        style={{ position: 'fixed', right: 20, bottom: 10, zIndex: 100 }}
-        rel="noreferrer"
-      >
-        <Button
-          color="primary"
-          size="large"
-          variant="contained"
-          sx={{
-            position: 'fixed',
-            right: 20,
-            bottom: 10,
-            zIndex: 100,
-            fontWeight: 'bold',
-          }}
-        >
-          피드백
-        </Button>
-      </a>
+
+      <KakaoChat />
 
       <Box className="map-area" sx={{ position: 'relative' }}>
         <div style={{ aspectRatio: '1 / 1' }} id="map"></div>
