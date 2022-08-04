@@ -10,6 +10,8 @@ import KakaoShare from '../../src/cafe/lnading/KakaoShare';
 import SectionContent from '../../src/cafe/lnading/SectionContent';
 import KakaoChat from '../../src/cafe/lnading/KakaoChat';
 import { GetStaticProps } from 'next';
+import SectionIntro from '../../src/cafe/lnading/SectionIntro';
+import SectionServey from '../../src/cafe/lnading/SectionSurvey';
 
 const metaData = {
   title: '깊이를 마시다 | 스마트 메뉴판',
@@ -45,11 +47,19 @@ function LandingPage() {
     <Layout header={<LandingHeader />}>
       <Meta data={metaData} />
 
-      <Box display="flex" flexDirection={'column'} paddingX="1rem">
-        {/* Section 1 (main) */}
+      <Box display="flex" flexDirection={'column'}>
+        {/* Section main */}
         <SectionMain handleScroll={handleScroll} />
 
-        {/* Section 2 */}
+        {/* <hr /> */}
+
+        {/* SectionIntro */}
+        <SectionIntro />
+
+        {/* SectionServey */}
+        <SectionServey />
+
+        {/* SectionContent */}
         <SectionContent />
 
         <SectionGradient handleScroll={handleScroll} />

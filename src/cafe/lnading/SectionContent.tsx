@@ -11,41 +11,53 @@ import {
 import TagIcon from '@mui/icons-material/Tag';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
+import SearchIcon from '@mui/icons-material/Search';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 
 import Image from 'next/image';
 
 function SectionContent() {
   return (
-    <Box>
-      <Box display="flex" justifyContent={'center'}>
-        <Image
-          src="/images/coffee_flavor.png"
-          alt="landing-2"
-          width={222}
-          height={318}
-        />
-      </Box>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <span style={{ flex: 1 }}></span>
 
       <Typography
         variant="h4"
         fontWeight="bold"
         align="center"
-        sx={{ marginTop: '5rem', marginBottom: '1.5rem' }}
+        sx={{
+          marginX: '1rem',
+          marginTop: '5rem',
+          marginBottom: '3rem',
+          // backgroundColor: 'rgba(2, 32, 71, 0.05)',
+          backgroundColor: '#4f9cff',
+          color: 'white',
+          padding: '2.5rem 1rem',
+          borderRadius: '24px',
+        }}
       >
-        드링크뎁스를
-        <div>왜 이용해야 할까요?</div>
+        드링크뎁스 메뉴판
       </Typography>
 
-      <Typography variant="h6" fontWeight="400" align="center" gutterBottom>
-        커피 전문점이 7만6000개 이상 늘어남에 따라 <br />
-        고객 입장에서 음료 경험의 시행착오를 줄이는 것이 중요해졌습니다.
+      <Box display="flex" justifyContent={'center'}>
+        <img
+          src="/images/o2o/모바일 메뉴판.png  "
+          alt="landing-2"
+          width={'100%'}
+          // width={800}
+          // height={1198.75}
+        />
+      </Box>
+
+      <Typography align="center" fontWeight="bold">
+        음료 특화 메뉴판
       </Typography>
 
       <List
         sx={{
           width: '100%',
           maxWidth: 360,
-          marginTop: '2rem',
+          marginTop: '1rem',
           bgcolor: 'background.paper',
           '.MuiListItemText-primary': {
             fontSize: '1.5rem',
@@ -63,17 +75,23 @@ function SectionContent() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary="음료 전문 모바일 메뉴판 "
+            primary="음료 중심의 데이터 설계"
             secondary={
-              '오프라인 메뉴판은 구조상 복잡하여 한눈에 보았을 때 불편함을 줄수 있습니다. 모바일 음료 메뉴판으로 더욱 효율적인 메뉴판 구성을 경험해보세요.'
+              <Typography
+                variant="h6"
+                color="GrayText"
+                sx={{ marginTop: '0.25rem', lineHeight: 1.4 }}
+              >
+                {'유저에게 음료 선택의 가이드라인을 제공합니다.'}
+              </Typography>
             }
           />
         </ListItem>
         {/* <Divider variant="inset" component="li" /> */}
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar sx={{ backgroundColor: '#6AD7FF' }}>
-              <MoneyOffIcon />
+            <Avatar /*  sx={{ backgroundColor: '#6AD7FF' }} */>
+              <SearchIcon />
             </Avatar>
           </ListItemAvatar>
           {/* <ListItemButton>
@@ -82,9 +100,15 @@ function SectionContent() {
                 </ListItemIcon>
               </ListItemButton> */}
           <ListItemText
-            primary="모바일 메뉴판 주요 광고노출"
+            primary="음료의 지도 검색 기능"
             secondary={
-              '3주 기간동안 드링크뎁스 팀에서 광고 및 유효타겟 추적을 통해 신규고객 유치를 돕습니다.'
+              <Typography
+                variant="h6"
+                color="GrayText"
+                sx={{ marginTop: '0.25rem', lineHeight: 1.4 }}
+              >
+                {'목적지에 내가 주로 마시는 음료를 검색 및 필터링 합니다.'}
+              </Typography>
             }
           />
         </ListItem>
@@ -92,17 +116,25 @@ function SectionContent() {
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
             <Avatar sx={{ backgroundColor: 'secondary.main' }}>
-              <CoffeeMakerIcon />
+              <EmojiPeopleIcon />
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary="메뉴 고민 끝"
+            primary="유저 친화적 UI/UX"
             secondary={
-              '음료전문 모바일 메뉴판이 연동된 오프라인 QR 메뉴판을 통해 사장님께서 추천해주시는 메뉴 및 리뷰를 노출.'
+              <Typography
+                variant="h6"
+                color="GrayText"
+                sx={{ marginTop: '0.25rem', lineHeight: 1.4 }}
+              >
+                {'내 위치 기반, 메뉴 찜 등의 유저 친화적인 인터페이스.'}
+              </Typography>
             }
           />
         </ListItem>
       </List>
+
+      <span style={{ flex: 1 }}></span>
     </Box>
   );
 }

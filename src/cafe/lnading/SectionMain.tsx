@@ -11,6 +11,7 @@ function SectionMain({ handleScroll }: SectionMainProps) {
       display="flex"
       flexDirection="column"
       justifyContent="center"
+      paddingX="1rem"
     >
       <span style={{ flex: 1 }} />
       <Typography
@@ -18,16 +19,17 @@ function SectionMain({ handleScroll }: SectionMainProps) {
         align="center"
         // color="primary"
       >
-        우리 카페만의 <br />{' '}
+        유저를 부르는 <br />{' '}
         <span style={{ fontWeight: 'bold' }}>특별한 메뉴판</span>
       </Typography>
 
       <Typography
-        variant="h6"
+        variant="h5"
         align="center"
         sx={{ marginTop: '3rem', marginBottom: '0.5rem' }}
       >
-        카페 전문 모바일 메뉴판을 도입해보세요.
+        우리 카페만의 모바일 메뉴판을
+        <br /> 도입하세요.
       </Typography>
       {/* <Typography variant="h6" align="center">
         국내 유명 로스터리들의 개성있고 특별한 원두를 최저가로 도입해 보세요.
