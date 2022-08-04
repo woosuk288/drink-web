@@ -4,14 +4,18 @@ import { testCafes } from '..';
 import CafeHeader from '../../../src/cafe/Header';
 import Intro from '../../../src/cafe/Intro';
 import Menus from '../../../src/cafe/Menus';
+import { AuthUserProvider } from '../../../src/context/AuthUserContext';
 import { CafePageProps } from '../../../src/utils/types';
 
 const CafePage: NextPage<CafePageProps> = ({ cafeIntro, cafeMenus }) => {
   return (
     <Container maxWidth="sm" disableGutters>
-      <CafeHeader title={cafeIntro.name} />
-      <Intro cafeIntro={cafeIntro} />
-      <Menus cafeMenus={cafeMenus} />
+      {/* TODO: meta 넣기 */}
+      <AuthUserProvider>
+        <CafeHeader title={cafeIntro.name} />
+        <Intro cafeIntro={cafeIntro} />
+        <Menus cafeMenus={cafeMenus} />
+      </AuthUserProvider>
     </Container>
   );
 };

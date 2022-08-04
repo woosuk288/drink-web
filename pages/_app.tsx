@@ -17,7 +17,6 @@ import { logEvent, setCurrentScreen } from 'firebase/analytics';
 import { analytics } from '../src/utils/firebase/firebaseInit';
 
 import { QueryClientProvider, QueryClient } from 'react-query';
-import { AuthUserProvider } from '../src/context/AuthUserContext';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -88,13 +87,11 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
 
-        <AuthUserProvider>
-          <QueryClientProvider client={queryClient}>
-            <ApolloProvider client={client}>
-              <Component {...pageProps} />
-            </ApolloProvider>
-          </QueryClientProvider>
-        </AuthUserProvider>
+        <QueryClientProvider client={queryClient}>
+          <ApolloProvider client={client}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+        </QueryClientProvider>
       </ThemeProvider>
     </CacheProvider>
   );

@@ -1,9 +1,15 @@
 import { Box, Button, Typography } from '@mui/material';
-import { getTestType } from '../utils/combos';
+import { useLayoutEffect, useState } from 'react';
+import { getLabelWithColor, getTestType } from '../utils/combos';
 import { MenuDetailProps } from '../utils/types';
 
 function MenuDetail({ item }: MenuDetailProps) {
-  const isSmart = getTestType() === 'smart';
+  const [isSmartMenu, setIsSmartMenu] = useState(false);
+
+  useLayoutEffect(() => {
+    const isSmart = getTestType() === 'smart';
+    setIsSmartMenu(isSmart);
+  }, []);
 
   return (
     <div>
@@ -42,11 +48,19 @@ function MenuDetail({ item }: MenuDetailProps) {
           variant="subtitle2"
           gutterBottom
         >
-          {isSmart && item.description}
+          {isSmartMenu && item.description}
         </Typography>
 
         <Typography
-          sx={{ display: 'block' }}
+          sx={{
+            display: 'block',
+            '> span ': {
+              marginRight: '2px',
+              color: '#fff',
+              padding: '2px',
+              borderRadius: '2px',
+            },
+          }}
           component="span"
           variant="body2"
           // color="text.primary"
@@ -54,7 +68,18 @@ function MenuDetail({ item }: MenuDetailProps) {
           fontWeight="bold"
           gutterBottom
         >
-          {isSmart && item.labels.map((label) => label + ' ')}
+          {/* {isSmartMenu && item.labels.map((label) => label + ' ')} */}
+          {isSmartMenu &&
+            item.labels.map((label) => (
+              <span
+                key={label}
+                style={{
+                  backgroundColor: getLabelWithColor(label).color,
+                }}
+              >
+                {label}
+              </span>
+            ))}
         </Typography>
 
         <Typography variant="subtitle2" sx={{ color: 'red' }}>
