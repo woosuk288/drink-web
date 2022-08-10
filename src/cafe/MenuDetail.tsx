@@ -64,7 +64,7 @@ function MenuDetail({ item }: MenuDetailProps) {
           component="span"
           variant="body2"
           // color="text.primary"
-          color={'primary'}
+          // color={'primary'}
           fontWeight="bold"
           gutterBottom
         >

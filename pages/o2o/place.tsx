@@ -417,6 +417,7 @@ const PlacePage: NextPage = () => {
   if (mapLoadedStatus !== 'ready')
     return (
       <Container maxWidth="sm" disableGutters>
+        <Meta data={metaData} />
         Loading...
       </Container>
     );
